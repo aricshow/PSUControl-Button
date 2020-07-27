@@ -20,6 +20,7 @@ Software Setup:
 Download the Repo either by downloading from the website and unpacking or by cloning using the collowing steps.
 
 cd ~
+
 git clone https://github.com/aricshow/PSUControl-Button.git
 
 This will create folder in your home directory called PSUControl-Button.
