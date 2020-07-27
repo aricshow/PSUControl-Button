@@ -1,7 +1,7 @@
 # PSUControl-Button
 Add a physical button to the Raspberry Pi to toggle your printers PSU via the Octoprint plugin PSUControl.
 
-Features:
+This small and simple script has the following features:
 
 -Ties into PSUControl by making API calls rather than altering GPIO directly.
 
