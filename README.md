@@ -31,7 +31,7 @@ You can get you API key from the settings menu of Octoprint under API.
 
 chmod 755 start.sh
 
-You can run the code to test it and see the log data output to console to test your setup. Comment out the API calls to power the CPU on and off, and uncomment the debounce message to fine tune your debounce timing.
+You can run the code to test it and see the log data output to console to test your setup. Comment out the API calls to power the PSU on and off, and uncomment the debounce message to fine tune your debounce timing.
 
 You can start the script on bootup by adding a cronjob. Use the command 'sudo crontab -e' and add the following line:
 
