@@ -14,10 +14,8 @@ I have a button setup with power coming from pin 1 with pin 11 set as input runn
 Software Setup:
 Download the Repo either by downloading from the website and unpacking or by cloning using the collowing steps.
 
----------
 cd ~
 git clone https://github.com/aricshow/PSUControl-Button.git
----------
 
 This will create folder in your home directory called PSUControl-Button.
 
