@@ -2,10 +2,15 @@
 Add a physical button to the Raspberry Pi to toggle your printers PSU via the Octoprint plugin PSUControl.
 
 Features:
+
 -Ties into PSUControl by making API calls rather than altering GPIO directly.
+
 -Debounce code to reject fast input from button bounce.
+
 -Adjustable toggle delay to prevent cycling power too fast.
+
 -You can kill the script externally by pressing the button five times after an initial click and half second delay.
+
 -Threaded to have minimum cpu usage when idle.
 
 Physical Setup:
