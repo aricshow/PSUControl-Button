@@ -25,7 +25,7 @@ git clone https://github.com/aricshow/PSUControl-Button.git
 
 This will create folder in your home directory called PSUControl-Button.
 
-You will need to edit psubutton.py to add your Octoprint API key, as well as to alter any of the settings declared as variables at the top of the file such as the GPIO pin number and toggle delay.
+You will need to edit psubutton.py to add your Octoprint API key, as well as to alter any of the settings declared as constants at the top of the file such as the GPIO pin number and toggle delay.
 
 You can get you API key from the settings menu of Octoprint under API.
 
