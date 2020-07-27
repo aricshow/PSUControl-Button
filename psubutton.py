@@ -35,6 +35,7 @@ TIMEOUT = 10.0  # Delay in seconds between allowed power cycles.
 BOUNCE = 0.5  # Delay for debounce, can be fine tuned lower or higher as desired.
 SPEED = 3.0  # Max amount of time for quick presses to exit script.
 EXITNUM = 5  # Number of quick presses required to exit.
+GPIOPIN = 11  # Number of the GPIO Pin that your button input is connected to.
 
 # Global Variables
 last_press = time.clock_gettime(CLK_ID)-TIMEOUT  # Prevent wait X sec after startup
@@ -54,7 +55,7 @@ def button_callback(channel):
 				print(time.ctime()+": Quick button exit activated.")
 				quit_request.set()
 	else:
-		quick_presses = 0
+		quick_presses = 0. # Reset quick presses
 		status = requests.get(API_URL, headers=HEADER).json()
 		if status['isPSUOn']:
 			print(time.ctime()+": Turning PSU OFF")
@@ -66,11 +67,11 @@ def button_callback(channel):
 			requests.post(API_URL, json={'command': 'turnPSUOn'}, headers=HEADER)
 		last_press = this_press
 
-GPIO.setwarnings(True)
+GPIO.setwarnings(True)  # Log any warnings. Can set to false to ignore GPIO warnings in your logs.
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(GPIOPIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-GPIO.add_event_detect(11, GPIO.RISING, callback=button_callback)
+GPIO.add_event_detect(GPIOPIN, GPIO.RISING, callback=button_callback)
 
 print(time.ctime()+": Script Started")
 
