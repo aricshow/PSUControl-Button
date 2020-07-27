@@ -60,7 +60,7 @@ def button_callback(channel):
 		if status['isPSUOn']:
 			print(time.ctime()+": Turning PSU OFF")
 			# Comment this next line out during testing to prevent actual power cycle.
-			requests.post(API_URL, json={'command': 'turnPSUOff'}, headers=HEADER)
+			requests.post(API_URL, json={'command': 'turnPSUOff'}, headers=HEADER)  # If this throws any errors, it will end up in the log.
 		else:
 			print(time.ctime()+": Turning PSU ON")
 			# Comment this next line out during testing to prevent actual power cycle
