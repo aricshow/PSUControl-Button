@@ -11,7 +11,7 @@ This small and simple script has the following features:
 
 -You can kill the script externally by pressing the button five times after an initial click and half second delay.
 
--Threaded to have minimum cpu usage when idle.
+-Threaded to utilize minimum resources when idle. (0% cpu usage through use off callbacks and 3.7MB of memory due to python when IDLE.)
 
 Physical Setup:
 I have a button setup with power coming from pin 1 with pin 11 set as input running through a 10k ohm resistor. In my testing a capacitor only caused issues, and there a basic but reliable debounce delay into the code. If you desire, you can also implement a debounce circuit in hardware and reduce or eliminate the debounce time variable.
