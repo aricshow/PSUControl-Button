@@ -27,7 +27,7 @@ import requests
 import threading
 
 #Define CONSTANTS
-API_URL = "http://127.0.0.1/api/plugin/psucontrol" #Default for Octopi, can be varified from a browser.
+API_URL = "http://127.0.0.1:80/api/plugin/psucontrol" #Default for Octopi, can be varified from a browser. Edit port here.
 API_KEY = "1234567890" #Replace with your API Key
 HEADER = {'X-Api-Key': API_KEY}
 CLK_ID = time.CLOCK_REALTIME
@@ -46,7 +46,7 @@ def button_callback(channel):
 	global last_press
 	global quick_presses
 	this_press = time.clock_gettime(CLK_ID)
-	if ((thispress-last_press)<TIMEOUT):
+	if ((this_press-last_press)<TIMEOUT):
 		#print("Filtered fast input:"+(this_press-last_press))
 		#Uncomment this line to test button bounce
 		if(SPEED>(this_press-last_press)>BOUNCE): 
