@@ -29,7 +29,7 @@ import threading
 #Define CONSTANTS
 API_URL = "http://127.0.0.1:80/api/plugin/psucontrol" #Default for Octopi, can be varified from a browser. Edit port here.
 API_KEY = "1234567890" #Replace with your API Key
-HEADER = {'X-Api-Key': API_KEY}
+HEADER = {'X-Api-Key': API_KEY, 'Content-Type': "application/json"}
 CLK_ID = time.CLOCK_REALTIME
 TIMEOUT = 10.0  # Delay in seconds between allowed power cycles.
 BOUNCE = 0.5  # Delay for debounce, can be fine tuned lower or higher as desired.
