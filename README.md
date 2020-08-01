@@ -43,4 +43,4 @@ Happy printing.
 
 ### Disclaimer
 
-Use of this plugin is at your own risk. There is a reason most people recomment getting a smart plug rather than use PSUControl, as demonstrated by the EMI issue I experianced which let to my printer turning on and off when a bad ballast to a light in the room cycled. There are always risks and learning involved when creating your own electronics, and its advisable to ensure you have a good working knowledge of electronics, and understand and can minimize your exposure to risk.
+Use of this plugin is at your own risk. There is a reason most people recomment getting a smart plug rather than use PSUControl, as demonstrated by the EMI issue I experianced which led to my printer turning on and off when a bad ballast to a light in the room cycled. There are always risks and learning involved when creating your own electronics, and its advisable to ensure you have a good working knowledge of electronics, and understand and can minimize your exposure to risk.
