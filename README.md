@@ -11,7 +11,9 @@ This small and simple script has the following features:
 
 ### Physical Setup:
 
-I have a button setup with power coming from pin 1 with pin 11 set as input running through a 10k ohm resistor. In my testing a capacitor only caused issues, and there a basic but reliable debounce delay into the code. If you desire, you can also implement a debounce circuit in hardware and reduce or eliminate the debounce time variable.
+I have a button setup with power coming from pin 1 with pin 11 set as input running through a 10k ohm resistor. In my testing a capacitor only caused issues, and there a basic but reliable debounce delay into the code. If you desire, you can also implement a debounce circuit in hardware and reduce or eliminate the debounce time variable. 
+
+I found the need to add an RF choke (ferrite bead) to the wires coming from the button to eliminate EMI from the ceiling fan/light in my office. Shorter wires may have worked just as well, but I felt that was a more robust solution.
 
 ### Software Setup:
 
@@ -37,3 +39,8 @@ You can start the script on bootup by adding a cronjob. Use the command `sudo cr
 `@reboot sh /home/pi/PSUControl-Button/start.sh >>/home/pi/PSUControl-Button/log 2>&1`
 
 Happy printing.
+
+
+### Disclaimer
+
+Use of this plugin is at your own risk. There is a reason most people recomment getting a smart plug rather than use PSUControl, as demonstrated by the EMI issue I experianced which let to my printer turning on and off when a bad ballast to a light in the room cycled. There are always risks and learning involved when creating your own electronics, and its advisable to ensure you have a good working knowledge of electronics, and understand and can minimize your exposure to risk.
