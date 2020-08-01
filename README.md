@@ -17,10 +17,10 @@ I have a button setup with power coming from pin 1 with pin 11 set as input runn
 
 Download the Repo either by downloading from the website and unpacking or by cloning using the collowing steps.
 
-`cd ~
+`cd ~`
 
-git clone https://github.com/aricshow/PSUControl-Button.git
-`
+`git clone https://github.com/aricshow/PSUControl-Button.git`
+
 
 This will create folder in your home directory called PSUControl-Button.
 
@@ -34,6 +34,6 @@ You can run the code to test it and see the log data output to console to test y
 
 You can start the script on bootup by adding a cronjob. Use the command `sudo crontab -e` and add the following line:
 
-@reboot sh /home/pi/PSUControl-Button/start.sh >>/home/pi/PSUControl-Button/log 2>&1
+`@reboot sh /home/pi/PSUControl-Button/start.sh >>/home/pi/PSUControl-Button/log 2>&1`
 
 Happy printing.
