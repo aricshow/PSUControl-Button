@@ -43,29 +43,29 @@ quick_presses = 0  # Count for how many times the button has been pressed quickl
 quit_request = threading.Event()
 
 def button_callback(channel):
-	global last_press
-	global quick_presses
-	this_press = time.clock_gettime(CLK_ID)
-	if ((this_press-last_press)<TIMEOUT):
-		#print("Filtered fast input:"+(this_press-last_press))
-		#Uncomment this line to test button bounce
-		if(SPEED>(this_press-last_press)>BOUNCE): 
-			quick_presses  += 1
-			if(quick_presses >= EXITNUM):
-				print(time.ctime()+": Quick button exit activated.")
-				quit_request.set()
-	else:
-		quick_presses = 0. # Reset quick presses
-		status = requests.get(API_URL, headers=HEADER).json()
-		if status['isPSUOn']:
-			print(time.ctime()+": Turning PSU OFF")
-			# Comment this next line out during testing to prevent actual power cycle.
-			requests.post(API_URL, json={'command': 'turnPSUOff'}, headers=HEADER)  # If this throws any errors, it will end up in the log.
-		else:
-			print(time.ctime()+": Turning PSU ON")
-			# Comment this next line out during testing to prevent actual power cycle
-			requests.post(API_URL, json={'command': 'turnPSUOn'}, headers=HEADER)
-		last_press = this_press
+        global last_press
+        global quick_presses
+        this_press = time.clock_gettime(CLK_ID)
+        if ((this_press-last_press)<TIMEOUT):
+                #print("Filtered fast input:"+(this_press-last_press))
+                #Uncomment this line to test button bounce
+                if(SPEED>(this_press-last_press)>BOUNCE): 
+                        quick_presses  += 1
+                        if(quick_presses >= EXITNUM):
+                                print(time.ctime()+": Quick button exit activated.")
+                                quit_request.set()
+        else:
+                quick_presses = 0. # Reset quick presses
+                status = requests.get(API_URL, headers=HEADER).json()
+                if status['isPSUOn']:
+                        print(time.ctime()+": Turning PSU OFF")
+                        # Comment this next line out during testing to prevent actual power cycle.
+                        requests.post(API_URL, json={'command': 'turnPSUOff'}, headers=HEADER)  # If this throws any errors, it will end up in the log.
+                else:
+                        print(time.ctime()+": Turning PSU ON")
+                        # Comment this next line out during testing to prevent actual power cycle
+                        requests.post(API_URL, json={'command': 'turnPSUOn'}, headers=HEADER)
+                last_press = this_press
 
 GPIO.setwarnings(True)  # Log any warnings. Can set to false to ignore GPIO warnings in your logs.
 GPIO.setmode(GPIO.BOARD)
@@ -82,4 +82,4 @@ GPIO.cleanup()
 print(time.ctime()+": Performed cleanup and exiting.")
 
 if __name__ == "__main__":
-	main()
+        main()
