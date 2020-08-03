@@ -1,7 +1,7 @@
 #!/bin/sh
 # start.sh
-# Navigate to home directory, than to this directory, execute python script, then back home.
+# Navigate to script directory, execute python script.
+# Makes cronjob a little easier, but not entirely nessicary.
 
-cd /
-cd home/pi/psubutton
+cd /home/pi/psubutton
 python3 psubutton.py
